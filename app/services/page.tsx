@@ -13,7 +13,7 @@ import {
   RocketLaunchIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
-import { SkillCard } from "@/components";
+import SkillCard from "@/components/skill-card";
 
 const SERVICES = [
   {
