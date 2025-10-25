@@ -75,7 +75,8 @@ export function Navbar() {
               height={40}
               className="h-10 w-auto"
               src="/favicon-black.png"
-              alt="Advertio"
+              alt="Adverito"
+              unoptimized
             />
           </div>
         </Link>
