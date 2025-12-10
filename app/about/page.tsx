@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import {
   ChartBarIcon,
@@ -46,10 +47,14 @@ export default function AboutPage() {
       {/* Hero Section */}
       <div className="relative h-[80vh] min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/image/about-main.jpg')" }}
-        >
+        <div className="absolute inset-0">
+          <Image
+            src="/image/about-main.jpg"
+            alt="About Background"
+            fill
+            priority
+            className="object-cover object-center"
+          />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
