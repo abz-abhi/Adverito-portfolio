@@ -50,7 +50,7 @@ export function Projects() {
     <section className="py-28 px-8">
       <div className="container mx-auto mb-20 text-center">
         <h2 className="mb-4 text-3xl lg:text-4xl font-bold text-gray-900">
-          My Projects
+          Our Projects
         </h2>
         <p className="mx-auto w-full px-4 font-normal text-gray-500 lg:w-6/12 text-lg">
           Whether you have a mobile app idea that needs to come to life or a

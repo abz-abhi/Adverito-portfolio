@@ -84,7 +84,7 @@ export default function AboutPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                   <CheckBadgeIcon className="w-4 h-4" />
-                  OUR PHILOSOPHY
+                  WHO WE ARE
                 </div>
                 <h2 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
                   Your Growth{" "}
@@ -94,17 +94,17 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  At{" "}
                   <span className="font-semibold text-green-700">Adverito</span>
-                  , we believe that your growth defines ours. We are a creative
-                  and digital marketing agency focused on delivering impactful
-                  results that help brands stand out in today&apos;s fast-paced
-                  digital world.
+                  , is a full-service web development and digital marketing
+                  company committed to helping businesses grow online. We
+                  combine creativity, technology, and strategy to provide
+                  impactful solutions that make brands unique and memorable.
                 </p>
                 <p>
-                  From innovative designs to strategic marketing solutions, our
-                  mission is simple - to help your business grow smarter,
-                  stronger, and faster.
+                  Our team believes that every business — big or small —
+                  deserves a strong and professional digital presence. That’s
+                  why we deliver quality work with transparency, dedication, and
+                  value.
                 </p>
                 <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-2xl">
                   <p className="text-green-800 font-semibold italic text-lg">
