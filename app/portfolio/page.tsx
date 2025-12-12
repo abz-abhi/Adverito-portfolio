@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   EyeIcon,
   ArrowTopRightOnSquareIcon,
@@ -89,6 +89,20 @@ const CATEGORIES = [
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = React.useState("All");
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const filteredProjects =
     activeCategory === "All"
@@ -98,7 +112,13 @@ export default function Portfolio() {
         );
 
   return (
-    <section id="portfolio" className="px-8 py-20 bg-white">
+    <section id="portfolio" className="px-8 py-20 bg-white pt-12">
+      {/* Scroll Progress Bar */}
+      <div
+        className="fixed top-0 left-0 right-0 h-1 z-50 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       <div className="container mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

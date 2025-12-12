@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-
+import { useState, useEffect } from "react";
 import {
   ChartBarIcon,
   LightBulbIcon,
@@ -42,8 +42,29 @@ const VALUES = [
 ];
 
 export default function AboutPage() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section id="about" className="min-h-screen bg-white">
+      {/* Scroll Progress Bar */}
+      <div
+        className="fixed top-0 left-0 right-0 h-1 z-50 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       {/* Hero Section */}
       <div className="relative h-[80vh] min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -102,14 +123,14 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Our team believes that every business — big or small —
-                  deserves a strong and professional digital presence. That’s
+                  deserves a strong and professional digital presence. That's
                   why we deliver quality work with transparency, dedication, and
                   value.
                 </p>
                 <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-2xl">
                   <p className="text-green-800 font-semibold italic text-lg">
-                    &quot;We don&apos;t just create campaigns - we build
-                    experiences that connect, inspire, and convert.&quot;
+                    "We don't just create campaigns - we build experiences that
+                    connect, inspire, and convert."
                   </p>
                 </div>
               </div>
@@ -202,7 +223,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
               These core principles guide every decision we make and every
-              solution we deliver for our clients&apos; success.
+              solution we deliver for our clients' success.
             </p>
           </div>
 
@@ -241,7 +262,7 @@ export default function AboutPage() {
             Ready to <span className="text-green-200">Grow Together</span>?
           </h2>
           <p className="text-xl text-green-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Let&apos;s discuss how we can help your business achieve remarkable
+            Let's discuss how we can help your business achieve remarkable
             growth through creative digital solutions tailored to your vision.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

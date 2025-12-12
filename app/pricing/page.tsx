@@ -1,5 +1,5 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import {
   CheckIcon,
   XMarkIcon,
@@ -121,11 +121,32 @@ const ADDON_SERVICES = [
 ];
 
 export default function Pricing() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section
       id="pricing"
-      className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-white"
+      className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-white pt-12"
     >
+      {/* Scroll Progress Bar */}
+      <div
+        className="fixed top-0 left-0 right-0 h-1 z-50 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       <div className="container mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 lg:mb-20 max-w-4xl mx-auto">
