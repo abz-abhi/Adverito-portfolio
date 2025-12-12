@@ -379,7 +379,7 @@ export default function ServicesPage() {
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05 }}
-              className="text-center p-6 bg-gradient-to-b from-white to-green-50 rounded-2xl border border-green-200 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="text-center p-6 bg-gradient-to-br from-white via-green-50 to-white rounded-2xl border border-green-200 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 {stat.value}
