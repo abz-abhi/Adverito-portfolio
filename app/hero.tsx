@@ -31,6 +31,7 @@ function Hero() {
       <header className="bg-white p-8 pt-10">
         <div className="container mx-auto grid h-full gap-10 min-h-[60vh] w-full grid-cols-1 items-center lg:grid-cols-2">
           <div className="row-start-2 lg:row-auto">
+            <h1>hello</h1>
             <h1 className="mb-4 lg:text-5xl !leading-tight text-3xl text-gray-900 font-bold">
               Transforming Ideas into <br /> Powerful Digital Experiences
             </h1>
